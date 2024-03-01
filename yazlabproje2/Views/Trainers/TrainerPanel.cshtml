@@ -1,0 +1,51 @@
+﻿@model yazlabproje2.Models.Trainer
+@{
+    ViewData["Title"] = "TrainerPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .btn-block {
+        margin-bottom: 15px;
+    }
+
+    .trainer-panel {
+        text-align: center;
+    }
+
+        .trainer-panel h2 {
+            margin-bottom: 30px;
+        }
+
+    .trainer-btn {
+        margin-bottom: 20px;
+    }
+
+    .trainer-img {
+        border: 3px solid #28a745; /* Yeşil renkte sınırla */
+        border-radius: 10px; /* Kenarları yuvarla */
+    }
+</style>
+
+<div class="container trainer-panel">
+    <h2>Trainer Panel</h2>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <a asp-controller="Trainers" asp-action="UpdateTrainerProfile" asp-route-id="@Model.Id" class="btn btn-primary btn-lg btn-block trainer-btn">
+                Bilgilerimi Güncelle
+            </a>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <a asp-controller="Trainers" asp-action="MyClients" asp-route-id="@Model.Id" class="btn btn-success btn-lg btn-block trainer-btn">
+                Danışanlarımı Görüntüle
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <img src="~/pictures/personaltrainer.png" alt="Personal Trainer" class="img-fluid trainer-img" />
+        </div>
+    </div>
+</div>

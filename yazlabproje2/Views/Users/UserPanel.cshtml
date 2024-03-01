@@ -1,0 +1,77 @@
+﻿@model yazlabproje2.Models.User
+@{
+    ViewData["Title"] = "UserPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .btn-block {
+        margin-bottom: 15px;
+    }
+
+    .card {
+        border: 1px solid #ddd; /* Kart kenarlık rengi */
+        border-radius: 8px; /* Kart köşe yuvarlama */
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .rounded-circle {
+        border: 3px solid #007bff; /* Mavi renkte sınırla */
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">User Panel</h2>
+
+    <div class="row text-center">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Bilgilerimi Güncelle</h5>
+                    <a asp-controller="Users" asp-action="UpdateProfile" asp-route-id="@Model.Id" class="btn btn-primary btn-block btn-block">
+                        Bilgilerimi Güncelle
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">İlerlemelerim</h5>
+                    <a asp-controller="Users" asp-action="MyProgress" asp-route-id="@Model.Id" class="btn btn-info btn-block btn-block">
+                        İlerlemelerim
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Programlarım</h5>
+                    <a asp-controller="Users" asp-action="MyPrograms" asp-route-id="@Model.Id" class="btn btn-success btn-block btn-block">
+                        Programlarım
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Beslenme Programım</h5>
+                    <a asp-controller="Users" asp-action="MyDiet" asp-route-id="@Model.Id" class="btn btn-warning btn-block btn-block">
+                        Beslenme Programım
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <img src="~/pictures/user.jpg" alt="User" class="img-fluid rounded-circle" />
+        </div>
+    </div>
+</div>
